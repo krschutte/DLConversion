@@ -158,7 +158,7 @@ Purpose/Change: Implementing changes to ad server settings to ensure view entire
  
 .EXAMPLE
 
-DLConversion -dlToConvert dl@domain.com -ignoreInvalidDLMembers:$TRUE -ignoreInvalidManagedByMembers:$TRUE -groupTypeOverride "Security" -convertToContact:$TRUE -retainOnPremisesSettings:$TRUE -requireInteractiveCredentials:$TRUE
+DLConversion -dlToConvert dl@domain.com -ignoreInvalidDLMember:$TRUE -ignoreInvalidManagedByMember:$TRUE -groupTypeOverride "Security" -convertToContact:$TRUE -retainOnPremisesSettings:$TRUE -requireInteractiveCredentials:$TRUE
 #>
 
 #---------------------------------------------------------[Script Parameters]------------------------------------------------------
@@ -3060,7 +3060,7 @@ Function archiveFiles
 	{
 		Try 
 		{
-			rename-item -path $script:sLogPath –newname $script:archiveXMLPath
+			rename-item -path $script:sLogPath -newname $script:archiveXMLPath
 		}
 		Catch 
 		{
